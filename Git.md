@@ -320,3 +320,9 @@ git checkout -b 分支名
 
 不断对一个分支进行提交操作，称之为：培育分支
 
+![image-20221126152512388](Git.assets/image-20221126152512388.png)
+
+如果想切换回master分支，可以执行`git checkout master`
+
+可以切换回master分支，查看master分支下的文件是否有变化
+
