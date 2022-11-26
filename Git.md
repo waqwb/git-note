@@ -326,3 +326,6 @@ git checkout -b 分支名
 
 可以切换回master分支，查看master分支下的文件是否有变化
 
+以下图片是切换回master分支之后，查看的git日志情况
+
+![image-20221126153109500](Git.assets/image-20221126153109500.png)
