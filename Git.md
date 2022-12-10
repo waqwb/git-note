@@ -434,3 +434,74 @@ git push -u origin master
 ```
 
 - -u：在推送的同时，将origin仓库的master分支设置为本地仓库当前分支的上游（upstream），添加了这个参数，在将来我们运行git pull命令的时候（从远程仓库获取内容），本地仓库的这个分支就可以直接从origin的master分支获取内容
+
+#### 推送至master以外的分支
+
+```bash
+git checkout-b feature-B  # 创建新的分支
+git push -u origin feature-B # 推送到远程仓库
+```
+
+![image-20221210103531857](Git.assets/image-20221210103531857.png)
+
+可以在远程仓库刷新后，查看新增分支
+
+## 从远程仓库获取
+
+### 获取远程仓库
+
+```bash
+git clone https://github.com/waqwb/git-note.git
+cd git-note
+git branch -a # 可以查看当前分支的相关信息，-a参数可以同时显示本地仓库和远程仓库的分支信息
+```
+
+![image-20221210104850841](Git.assets/image-20221210104850841.png)
+
+### 获取远程的其他分支
+
+```bash
+git checkout -b feature-B origin/feature-B
+```
+
+![image-20221210105100903](Git.assets/image-20221210105100903.png)
+
+- feature-B：是本地仓库中新建分支的名字，与远程分支保持同名，新建分支后面是获取来源的分支名称
+- origin/feature-B：以名为origin的仓库的featrue-B分支来源，在本地仓库创建feature-B分支
+
+### 向本地的feature-B分支提交
+
+```bash
+echo "another developer" >> readme.txt
+git add .
+git commit -am "add feature-B"
+git push
+```
+
+![image-20221210111437780](Git.assets/image-20221210111437780.png)
+
+![image-20221210111538789](Git.assets/image-20221210111538789.png)
+
+### 获取最新远程仓库的分支
+
+```bash
+git pull origin feature-B
+```
+
+![image-20221210112036357](Git.assets/image-20221210112036357.png)
+
+![image-20221210112047073](Git.assets/image-20221210112047073.png)
+
+> 如果两个人同时修改了同一部分的源代码，push的时候很容易发生冲突。
+>
+> 多名开发者在同一个分支进行作业的时候，为了减少冲突发生的情况，建议更频繁的进行push和pull操作
+
+## 可视化git学习网站
+
+### LearnGitBranching
+
+[Learn Git Branching](https://learngitbranching.js.org/?demo=&locale=zh_CN)
+
+### tryGit
+
+[tryGit](https://trygit.js.org/)
