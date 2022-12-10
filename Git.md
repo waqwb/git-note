@@ -417,3 +417,20 @@ git reset --hard 21b4d1c  #合并到master
 git commit --amend
 ```
 
+## 推送至远程仓库
+
+### 添加远程仓库
+
+```bash
+git remote add origin https://github.com/waqwb/git-note.git
+```
+
+### 推送至远程仓库
+
+#### 推送至master分支
+
+```bash
+git push -u origin master
+```
+
+- -u：在推送的同时，将origin仓库的master分支设置为本地仓库当前分支的上游（upstream），添加了这个参数，在将来我们运行git pull命令的时候（从远程仓库获取内容），本地仓库的这个分支就可以直接从origin的master分支获取内容
