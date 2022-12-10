@@ -364,4 +364,20 @@ git checkout master
 git merge --no-ff feature-A
 ```
 
->>>>>>> feature-A
+# >>>>>>> feature-A
+### 以图表形式查看分支
+
+```bash
+git log --graph
+```
+
+![image-20221210090032812](Git.assets/image-20221210090032812.png)
+
+## 更改提交的操作
+
+Git可以灵活操作历史版本
+
+```bash
+git reset --hard 哈希值
+```
+
