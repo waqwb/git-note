@@ -354,3 +354,11 @@ Tag创建版本信息，管理多个版本的发布。
 git merge
 ```
 
+想要实现合并分支到主干分支master中，首先切换到master分支
+
+```bash
+git checkout master
+# 为了在历史记录中明确记录本次的分支合并，我们要创建合并提交，参数 --no-ff
+git merge --no-ff feature-A
+```
+
