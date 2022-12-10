@@ -381,3 +381,39 @@ Git可以灵活操作历史版本
 git reset --hard 哈希值
 ```
 
+#### 创建fix-B分支
+
+```bash
+# 特性分支
+git checkout -b fix-B
+echo "fix-B" >> readme.txt
+git add .
+git commit -m "fix-B"
+git reflog # 查看操作日志，可以看到所有的git命令执行记录，但是不要用git的GC，可以使用git reglot恢复到原先的状态
+git checkout master 
+git reset --hard f078ada # 以图表形式查看分支
+git reset --hard 21b4d1c  #合并到master
+```
+
+#### 消除冲突
+
+```
+# 合并fix-B
+```
+
+![image-20221210092954812](Git.assets/image-20221210092954812.png)
+
+![image-20221210093055997](Git.assets/image-20221210093055997.png)
+
+用编辑器打开文件的时候，会发现出现如上图代码，如果是md文件，需要通过查看源码模式查看。
+
+=======以上的部分是当前HEAD的内容，以下的部分是要合并的分支中的内容。
+
+实际开发中，可能需要删除其中之一，所以在处理冲突的时候，要仔细分析冲突部分的内容或代码，再进行修改。
+
+#### 修改提交信息
+
+```bash
+git commit --amend
+```
+
